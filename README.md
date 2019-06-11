@@ -1,2 +1,3 @@
 # graphql-server
-Generic GraphQL server, it is just for testing
+
+Generic GraphQL server. It is just for testing
