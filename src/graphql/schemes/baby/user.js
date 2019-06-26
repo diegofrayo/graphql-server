@@ -13,6 +13,11 @@ module.exports = {
       updatedAt: Date!
     }
 
+    type BtBlock {
+      id: String!
+      name: String!
+    }
+
     input BtUserInput {
       email: String!
       name: String
@@ -22,10 +27,13 @@ module.exports = {
 
   queries: `
     btUsers: [BtUser]!
-    btUserById(id: String): BtUser
+    btUserById(id: String!): BtUser
+    btBlocksByUser(userId: String!): [BtBlock]!
   `,
 
   mutations: `
     btSignIn(email: String!, password: String!): BtUser!
+    btAddBlock(id: String!, name: String!): BtBlock!
+    btRemoveBlock(blockId: String!): BtBlock!
   `,
 };

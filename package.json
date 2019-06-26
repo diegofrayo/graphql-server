@@ -2,40 +2,60 @@
   "name": "graphql-server",
   "version": "1.0.0",
   "description": "Generic GraphQL server. It is just for testing",
+  "homepage": "https://github.com/diegofrayo/graphql-server#readme",
+  "license": "MIT",
+  "private": true,
   "keywords": [
     "graphql",
     "express",
     "node"
   ],
-  "homepage": "https://github.com/diegofrayo/graphql-server#readme",
   "bugs": {
     "email": "diegofrayo@gmail.com",
     "url": "https://github.com/diegofrayo/graphql-server/issues"
   },
-  "license": "MIT",
   "author": {
     "name": "Diego Rayo",
     "email": "diegofrayo@gmail.com",
     "url": "https://diegofrayo.netlify.com"
   },
-  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/diegofrayo/graphql-server.git"
   },
   "scripts": {
     "start": "nodemon src/index.js",
-    "debug": "nodemon src/index.js --loglevel debug --debug"
+    "debug": "nodemon src/index.js --loglevel debug --debug",
+    "lint": "eslint -c eslintrc.json src/**/*.js"
   },
   "dependencies": {
-    "apollo-server-express": "^2.0.4",
+    "apollo-server-express": "^2.6.6",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "graphql": "^0.13.2",
     "graphql-type-json": "0.2.1"
   },
+  "devDependencies": {
+    "@diegofrayo/eslint-config": "^1.0.3",
+    "eslint": "^6.0.1",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2"
+  },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=8.15.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --write",
+      "eslint -c eslintrc.json",
+      "git add"
+    ]
   }
 }

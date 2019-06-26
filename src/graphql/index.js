@@ -1,4 +1,4 @@
-const { ApolloServer, AuthenticationError } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
 
 // schemes
 const typeDefs = require('./schemes');
