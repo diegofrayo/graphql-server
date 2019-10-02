@@ -1,3 +1,4 @@
-const bodyParser = require('body-parser');
+const bodyParser = require('./body-parser');
+const cors = require('./cors');
 
-module.exports = [bodyParser.json({ limit: '5mb', extended: true })];
+module.exports = [bodyParser, cors];

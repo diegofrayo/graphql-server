@@ -29,8 +29,9 @@
     "lint": "eslint -c eslintrc.json src/**/*.js"
   },
   "dependencies": {
-    "apollo-server-express": "^2.6.6",
+    "apollo-server-express": "^2.9.4",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "graphql": "^0.13.2",
@@ -38,8 +39,8 @@
   },
   "devDependencies": {
     "@diegofrayo/eslint-config": "^1.0.3",
-    "eslint": "^6.0.1",
-    "husky": "^2.4.1",
+    "eslint": "^6.5.1",
+    "husky": "^2.7.0",
     "lint-staged": "^8.2.1",
     "prettier": "^1.18.2"
   },
